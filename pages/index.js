@@ -4,23 +4,12 @@ import { prefixLink } from 'gatsby-helpers'
 import DocumentTitle from 'react-document-title'
 import { config } from 'config'
 
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-
 import {Paper} from 'material-ui';
 
 // Styles for highlighted code blocks.
 import 'css/zenburn.css'
 
-injectTapEventPlugin();
 class Index extends React.Component {
-  constructor(props) {
-      super(props);
-  }
-
-  getChildContext() {
-      return {muiTheme: getMuiTheme()};
-  }
   render () {
     return (
       <DocumentTitle title={config.siteTitle}>
@@ -73,9 +62,5 @@ class Index extends React.Component {
     )
   }
 }
-
-Index.childContextTypes = {
-    muiTheme: React.PropTypes.object
-};
 
 export default Index;

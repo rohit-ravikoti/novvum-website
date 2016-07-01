@@ -6,12 +6,18 @@ import Headroom from 'react-headroom'
 
 import { rhythm } from 'utils/typography'
 
-module.exports = React.createClass({
-  propTypes () {
-    return {
-      children: React.PropTypes.any,
-    }
-  },
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
+injectTapEventPlugin();
+class template extends React.Component{
+  constructor(props) {
+      super(props);
+  }
+
+  getChildContext() {
+      return {muiTheme: getMuiTheme()};
+  }
   render () {
     return (
       <div>
@@ -52,5 +58,15 @@ module.exports = React.createClass({
         </Container>
       </div>
     )
-  },
-})
+  }
+}
+
+template.childContextTypes = {
+    muiTheme: React.PropTypes.object
+};
+
+template.propTypes = {
+  children: React.PropTypes.any,
+};
+
+module.exports = template;

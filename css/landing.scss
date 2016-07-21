@@ -1,0 +1,104 @@
+@import 'colors';
+
+.landing {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  &__cover {
+    background-color: $plum;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    justify-content: center;
+    object-fit: cover;
+    padding: 1em 1em 0 1em;
+    text-align: center;
+
+    h1 {
+      color: $white;
+      margin: .5em 0;
+    }
+
+    a {
+      color: $white;
+    }
+  }
+
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    li {
+      margin: 1em;
+    }
+  }
+}
+
+.landing-home {
+  .content {
+    &-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 30vh;
+      color: white;
+    }
+    &-container {
+      padding: 0 5%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &-title {
+      text-transform: lowercase;
+      text-size: 2em;
+      width: 500px;
+    }
+    &-subtitle {
+      text-size: 1em;
+      width: 500px;
+      text-align: right;
+    }
+  }
+}
+.landing-who {
+  background-image: url(https://bsrl.org/wallpaper/wp-content/uploads/2016/05/Super-smash-bros-wallpaper6.png);
+  background-size: cover;
+  .content {
+    &-wrapper {
+      text-align: left;
+      width: 40%;
+      padding-left: 40px;
+    }
+  }
+}
+.landing-what {
+  background-image: url(http://www.wallpapersxl.com/wallpapers/2560x1600/hacker/18929/hacker-lifehacker-minimal-18929.jpg);
+  background-size: cover;
+  .content {
+    &-wrapper {
+      text-align: left;
+      width: 50%;
+      padding: 40px;
+      float: right;
+    }
+  }
+}
+.landing-process {
+  background-image: url(http://img07.deviantart.net/2999/i/2015/305/d/2/saitama__onepunch_man__by_shogunarts98-d9a7cep.png);
+  background-size: cover;
+  .content {
+    &-wrapper {
+      text-align: left;
+      width: 50%;
+      float: right;
+      margin-right: 10%;
+    }
+  }
+}

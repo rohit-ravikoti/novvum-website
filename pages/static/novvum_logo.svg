@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="318px" height="317px" viewBox="0 0 318 317" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>NewLogoDiamond</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="156.25 0 312.5 156.25 156.25 312.5 0 156.25"></polygon>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="2.5" dy="2.5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.625" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <ellipse id="path-3" cx="74.975609" cy="74.9745272" rx="74.975609" ry="74.9745272"></ellipse>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="2.5" dy="2.5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.3125" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <ellipse id="path-5" cx="74.975609" cy="74.9745272" rx="74.975609" ry="74.9745272"></ellipse>
+        <ellipse id="path-7" cx="74.975609" cy="74.9745272" rx="74.975609" ry="74.9745272"></ellipse>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="NewLogoDiamond">
+            <g id="Rectangle-1">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <g id="Novvum_New" transform="translate(81.375000, 81.250000)">
+                <g id="mask-2" fill="#FFFFFF">
+                    <ellipse id="path-1" cx="74.975609" cy="74.9745272" rx="74.975609" ry="74.9745272"></ellipse>
+                </g>
+                <g id="Oval-14">
+                    <g id="path-1">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                        <use fill="#4074A7" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    </g>
+                </g>
+                <g id="Rectangle-1-Clipped">
+                    <mask id="mask-6" fill="white">
+                        <use xlink:href="#path-5"></use>
+                    </mask>
+                    <g id="path-1"></g>
+                    <polygon id="Rectangle-1" fill-opacity="0.212664176" fill="#000000" mask="url(#mask-6)" transform="translate(42.456241, 82.547742) rotate(-37.000000) translate(-42.456241, -82.547742) " points="86.0370508 111.977952 86.3505011 118.570706 -18.6620872 118.610356 -18.6620872 46.4851269 94.6714526 46.4851269 103.57457 54.2743955"></polygon>
+                </g>
+                <g id="Line-Clipped">
+                    <mask id="mask-8" fill="white">
+                        <use xlink:href="#path-7"></use>
+                    </mask>
+                    <g id="path-1"></g>
+                    <path d="M33.669286,134.420909 C33.669286,134.420909 47.2347189,50.6318252 54.6008948,33.2317803 C58.8856799,23.1104571 64.2338333,18.9036118 75.3137065,19.412347 C84.8678553,19.8510282 88.6646915,25.8119418 89.8272612,34.254394 C92.8174909,55.9691131 94.2761397,76.879583 94.2761397,76.879583 L134.607776,31.9157367 L104.997208,77.5385806 C104.997208,77.5385806 97.7039641,89.8216543 90.7753826,87.9938159 C82.8211799,85.8954071 80.9551696,77.0143181 80.8565714,76.5871291 C78.8144636,67.7394158 80.3805482,39.0581043 73.4174631,38.8615223 C65.6136923,38.6412059 60.2166923,57.6517 60.2166923,57.6517 L33.669286,134.420909 L33.669286,134.420909 Z" id="Line" fill="#FFFFFF" mask="url(#mask-8)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -14,7 +14,6 @@ const Navigation = (props) => {
         </ul>
       </div>
       <div className="navbar-center">
-        <NovvumLogo src="static/diamond.png"/>
       </div>
       <div className="navbar-right">
         <ul>

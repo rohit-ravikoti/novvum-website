@@ -1,7 +1,7 @@
 {
-  "name": "likescoffee",
+  "name": "novvum",
   "version": "1.0.0",
-  "description": "Gatsby Blog",
+  "description": "Novvum Website",
   "main": "n/a",
   "scripts": {
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public . ; exit 0",
@@ -33,7 +33,6 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
-    "detect-browser": "^1.4.0",
     "front-matter": "^2.0.6",
     "gatsby": "^0.11.7",
     "highlight.js": "^9.2.0",

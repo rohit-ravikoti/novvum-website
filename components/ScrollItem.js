@@ -1,7 +1,6 @@
 import React from 'react';
 // import { prefixLink } from 'gatsby-helpers';
 import './css/FullPageScroll.scss';
-var browser = require('detect-browser');
 import $ from 'jquery';
 
 

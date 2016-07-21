@@ -1,21 +1,25 @@
 import React from 'react';
 // import { prefixLink } from 'gatsby-helpers';
 import './css/FullPageScroll.scss';
-var browser = require('detect-browser');
 import $ from 'jquery';
+
+var browser = "none";
 
 // ------------- VARIABLES ------------- //
 var ticking = false;
-var isFirefox = browser.name === "firefox";
-var isIe = browser.name === "ie";
+var isFirefox = false;
+var isIe = false;
 var scrollSensitivitySetting = 30; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive) 
 var slideDurationSetting = 600; //Amount of time for which slide is "locked"
 var currentSlideNumber = 0;
 var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
-
+var totalSlideNumber = 0;
 export default class FullPageScroll extends React.Component {
   componentDidMount(){
-    this.totalSlideNumber = this.props.children.length;
+    isFirefox = (/Firefox/i.test(window.navigator.userAgent));
+    isIe = (/MSIE/i.test(window.navigator.userAgent)) || (/Trident.*rv\:11\./i.test(window.navigator.userAgent));
+    mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
+    totalSlideNumber = this.props.children.length;
     // ------------- ADD EVENT LISTENER ------------- //
     window.addEventListener(mousewheelEvent, _.throttle(this.parallaxScroll.bind(this), 60), false);
   }
@@ -37,7 +41,7 @@ export default class FullPageScroll extends React.Component {
       if (delta <= -scrollSensitivitySetting) {
         //Down scroll
         ticking = true;
-        if (currentSlideNumber !== this.totalSlideNumber - 1) {
+        if (currentSlideNumber !== totalSlideNumber - 1) {
           currentSlideNumber++;
           this.nextItem();
         }

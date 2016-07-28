@@ -3,7 +3,7 @@ import { prefixLink } from 'gatsby-helpers';
 import './css/navigation.scss';
 import NovvumLogo from './NovvumLogo';
 
-var Menu = require('react-burger-menu').slide;
+var Menu = require('react-burger-menu').push;
 
 const Navigation = (props) => {
   // const { style } = props;

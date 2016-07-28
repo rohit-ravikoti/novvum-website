@@ -10,6 +10,35 @@ const About = () => (
   <div className="landing">
     <FullPageScroll>
       <ScrollItem className="landing-who">
+        <div style={{
+            position: "absolute",
+            backgroundColor: "white",
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            zIndex: 0
+          }}
+        ></div>
+        <iframe
+          src="http://s.codepen.io/rravikot/debug/dXKxkR"
+          style={{
+            position: 'absolute', 
+            border: '0px #FFFFFF none',
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            zIndex: 3
+          }}
+          name="myiFrame"
+          scrolling="no"
+          frameBorder="0"
+          marginHeight="0px"
+          marginWidth="0px"
+          height="100%"
+          width="100%"
+        />
         <div className="content-wrapper">
           <div className="card">
             <p className="content-title">Who</p>

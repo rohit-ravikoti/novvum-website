@@ -69,28 +69,6 @@ body {
   }
 }
 
-.content {
-  &-wrapper {
-    height: 100vh;
-    font-size: 3vmin;
-    display: flex;
-    justify-content: center;
-    text-align: left;
-    flex-flow: column nowrap;
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    transform: translateY($content-offset);
-    will-change: transform;
-    backface-visibility: hidden;
-    @include transition($transition-speed + .5, all, cubic-bezier(0.22, 0.44, 0, 1));
-  }
-  &-title {
-    font-size: 12vmin;
-    line-height: 1.4;
-    text-transform: uppercase;
-  }
-}
-
 // ------------- SET TRANSFORM VALUES ------------- //
 .background.up-scroll {
   transform: translate3d(0, -$parallax-offset / 2, 0);

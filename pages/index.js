@@ -2,13 +2,11 @@ import React from 'react';
 // import { rhythm } from 'utils/typography';
 import { config } from 'config';
 import Navigation from 'components/Navigation';
-import FullPageScroll from 'components/FullPageScroll';
-import ScrollItem from 'components/ScrollItem';
 import 'css/landing.scss';
 
 const SiteIndex = () => (
     <div className="landing">
-      <ScrollItem className="landing-home">
+        <Navigation />
         <div style={{
             position: "absolute",
             backgroundColor: "white",
@@ -48,8 +46,6 @@ const SiteIndex = () => (
             </div>
           </div>
         </div>
-        <Navigation />
-      </ScrollItem> 
     </div>
   );
 

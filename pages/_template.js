@@ -87,6 +87,10 @@ const Template = (props) => {
     ]}
     title={ documentTitle }
     defaultTitle={ config.blogTitle }
+    script={[
+      {"src": "http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"},
+      {"src": "http://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.1/jquery.fullPage.min.js"}
+    ]}
   />);
 
 

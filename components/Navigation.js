@@ -3,9 +3,11 @@ import { prefixLink } from 'gatsby-helpers';
 import './css/navigation.scss';
 import NovvumLogo from './NovvumLogo';
 
+var Menu = require('react-burger-menu').slide;
+
 const Navigation = (props) => {
   // const { style } = props;
-  return (
+  /*return (
     <div className="navbar">
       <div className="navbar-left">
         <ul>
@@ -22,7 +24,14 @@ const Navigation = (props) => {
         </ul>
       </div>
     </div>
-  );
+  );*/
+  return (
+      <Menu right>
+        <a id="home" className="menu-item" href="/">Home</a>
+        <a id="about" className="menu-item" href="/about">About</a>
+        <a id="contact" className="menu-item" href="/contact">Contact</a>
+      </Menu>
+  )
 };
 
 Navigation.propTypes = {

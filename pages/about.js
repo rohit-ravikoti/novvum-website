@@ -1,25 +1,24 @@
 import React from 'react';
 // import { rhythm } from 'utils/typography';
 import { config } from 'config';
-
-import $ from 'jquery';
-import 'fullpage.js/jquery.fullpage.js';
+var $ = require('jquery');
 
 export default class About extends React.Component {
   constructor() {
     super()
   }
   componentDidMount() {
+    require('fullpage.js/jquery.fullpage.js');
     $('#fullpage').fullpage({
-            sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
-            anchors: ['header', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
-            menu: '#menu',
-            css3: true,
-            scrollingSpeed: 1000,
-            controlArrows: false,
-            verticalCentered: false,
-            scrollBar:true
-        });
+        sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+        anchors: ['header', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+        menu: '#menu',
+        css3: true,
+        scrollingSpeed: 1000,
+        controlArrows: false,
+        verticalCentered: false,
+        scrollBar:true
+    });
   }
   render(){
     return (

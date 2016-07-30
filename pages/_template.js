@@ -92,12 +92,10 @@ const Template = (props) => {
       {"rel": "stylesheet", "href": "https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.1/jquery.fullPage.min.css"}
     ]}
   />);
-
-
   return (
       <div id="outer-container">
         {helmet}
-        <Navigation />
+        <Navigation location={props.location}/>
         <div id="page-wrap">
           {children}
         </div>

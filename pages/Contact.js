@@ -7,13 +7,13 @@ import '../css/base.scss';
 
 var $ = require('jquery');
 
-class SiteIndex extends React.Component {
+class Contact extends React.Component {
   constructor() {
     super()
   }
   componentDidMount() {
     require('fullpage.js/jquery.fullpage.js');
-   $('#fullpage').fullpage({
+    $('#fullpage').fullpage({
         sectionsColor: ['#1bbc9b', '#27ae60', '#7BAABE', '#f39c12', '#e74c3c'],
         anchors: ['home', 'work', 'process', 'about', 'contact'],
         menu: "#myMenu",
@@ -71,8 +71,8 @@ class SiteIndex extends React.Component {
     );
   }
 }
-SiteIndex.propTypes = {
+Contact.propTypes = {
   route: React.PropTypes.object,
 };
 
-export default SiteIndex;
+export default Contact;

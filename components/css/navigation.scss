@@ -11,7 +11,7 @@ $animation-time: 0.4s;
   transform: translateY(-50%);
   right: 0;
   top: 50%;
-  width: 175px;
+  width: 160px;
   height: 35vh;
   z-index: 2000;
   transition: all $animation-time ease;
@@ -33,8 +33,8 @@ $animation-time: 0.4s;
       transition: all $animation-time ease;
       transition-delay: 0s;
       background: #ecf0f1;
-      padding: 5px;
-      width: 50%;
+      padding: 10px;
+      width: 30%;
       position: relaitve;
       /* -webkit-box-shadow: 1px 3px 20px 1px #34495e;
       -moz-box-shadow:    1px 3px 20px 1px #34495e;
@@ -57,12 +57,23 @@ $animation-time: 0.4s;
         white-space: nowrap;
         height: 100%;
       }
+      &-inactive-content{
+        display: flex;
+        color: black;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        white-space: nowrap;
+      }
       &:hover{
         width: 90%;
         background: #6C7A89;
         padding: 10px 20px;
         .nav-item-content{
           display: flex;
+        }
+        .nav-item-inactive-content{
+          display: none;
         }
       }
     }
@@ -73,199 +84,12 @@ $animation-time: 0.4s;
       .nav-item-content{
           display: flex;
       }
+      .nav-item-inactive-content{
+        display: none;
+      }
       &:hover{
         width: 100%;
       }
     }
   }
-}
-
-.bm-burger-button {
-  z-index: 1001 !important;
-  position: fixed;
-  width: 36px;
-  height: 30px;
-  right: 50px;
-  top: 50px;
-}
-
-.bm-menu{
-  width: 100%;
-  &-wrap{
-    z-index: 2000 !important;
-  }
-  background:
-        radial-gradient(circle at top left,
-        #34495e, #34495e,
-        darken(white, 8%)) !important;
-  overflow: hidden;
-}
-
-/* Wrapper for item list */
-.bm-item-list {
-  z-index: 2001 !important;
-  color: #b8b7ad;
-  padding: 0;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  align-content: stretch;
-  transform: translateZ(0);
-}
-
-$colors:
-  #ffffff, #34495e, #34495e,
-  #34495e, #34495e, #34495e;
-
-.menu-item {
-  h1{
-    font-size: 1.5em !important;
-    font-weight: 100 !important;
-  }
-  &-home{
-    flex-grow: 0.5;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    img{
-      padding: 0 !important;
-      margin: 0 !important;
-    }
-  }
-  position: relative;
-  flex-grow: 1;
-  transition: all $animation-time ease;
-  transition-delay: 0s;
-  .price {
-    font-size: 0;
-  }
-  .name, .type, .price, .abv {
-    position: absolute;
-    transition: all $animation-time ease;
-    transition-delay: 0;
-  }
-  .name {
-    left: 5vh;
-    top: 50%;
-    margin-top: -2.5vh;
-    font-size: 5vh;
-    line-height: 5vh;
-    font-weight: 300;
-  }
-  .type {
-    left: 5vh;
-    top: 50%;
-    margin-top: 2.5vh;
-    font-size: 0;
-    line-height: 2.5vh;
-    font-weight: 100;
-  }
-  .price {
-    top: 50%;
-    left: 5vh;
-    margin-top: 20vh;
-    line-height: 2.5vh;
-    font-weight: 500;
-  }
-  .abv {
-    top: 50%;
-    right: 5vh;
-    font-size: 2.5vh;
-    line-height: 2.5vh;
-    font-weight: 500;
-  }
-  /* the icon for this beer (initially invisible) */
-  svg {
-    position: absolute;
-    left: 1vh;
-    top: 50%;
-    margin-top: -10vh;
-    height: 20vh;
-    fill: none;
-    stroke-width: 2%;
-    stroke-linejoin: round;
-    stroke-linecap: round;
-    opacity: 0;
-    transition: all $animation-time ease;
-    transition-delay: 0s;
-  }
-  /* each panel has its own color scheme */
-  @for $i from 1 through 4 {
-    &:nth-of-type(#{$i}) {
-      z-index: 10 - $i;
-      background:
-        radial-gradient(circle at top left,
-        nth($colors, $i+1), nth($colors, $i+1),
-        darken(nth($colors, $i+1), 8%)) !important;
-      filter: drop-shadow(0 0 0.1vh darken(nth($colors, $i+2), 20%)) !important;
-      -webkit-filter: drop-shadow(0 0 0.1vh darken(nth($colors, $i+2), 20%)) !important;
-      h1, h2, h3 {
-        color: nth($colors, 1/* $i+2 */);
-      }
-      .price {
-        color: nth($colors, $i+2);
-      }
-      .abv {
-        color: nth($colors, $i);
-      }
-      svg {
-        stroke: nth($colors, $i);
-      }
-    }
-  }
-  &:hover {
-    flex-grow: 2;
-    /* .name {
-      left: 15vh;
-      margin-top: -3.75vh;
-    } */
-    .type {
-      left: 15vh;
-      margin-top: 1.75vh;
-      font-size: 2.5vh;
-    }
-    .abv {
-      margin-top: 1.25vh;
-    }
-    svg {
-      opacity: 1;
-      transition-delay: $animation-time;
-    }
-  }
-}
-
-/* Color/shape of burger icon bars */
-.bm-burger-bars {
-  background: white;
-}
-
-/* Position and sizing of clickable cross button */
-.bm-cross-button {
-  height: 24px;
-  width: 24px;
-  top: -100px !important;
-}
-
-/* Color/shape of close button cross */
-.bm-cross {
-  background: #bdc3c7;
-}
-
-/* General sidebar styles */
-.bm-menu {
-  z-index: 2000;
-  background: #373a47;
-  font-size: 1.15em;
-}
-
-/* Morph shape necessary with bubble or elastic */
-.bm-morph-shape {
-  fill: #373a47;
-}
-
-/* Styling of overlay */
-.bm-overlay {
-  z-index: 1001 !important;
-  background: rgba(0, 0, 0, 0) !important;
 }

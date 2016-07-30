@@ -33,7 +33,11 @@ export default createClass({
         const { top } = this.state;
         const thumbStyle = {
             zIndex: 3000,
-            backgroundColor: "#34495e"
+            backgroundColor: "#34495e",
+            width: "8px",
+            right: '0px',
+            top: 0,
+            bottom: 0
         };
         return (
             <div

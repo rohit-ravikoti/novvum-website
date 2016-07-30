@@ -48,6 +48,7 @@
     "react": "15.0.1",
     "react-addons-css-transition-group": "^15.3.0",
     "react-burger-menu": "^1.9.9",
+    "react-custom-scrollbars": "^4.0.0",
     "react-dom": "15.0.1",
     "react-google-analytics": "^0.2.0",
     "react-helmet": "^3.0.0",

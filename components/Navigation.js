@@ -2,40 +2,98 @@ import React from 'react';
 import { prefixLink } from 'gatsby-helpers';
 import './css/navigation.scss';
 import NovvumLogo from './NovvumLogo';
+import 'font-awesome/scss/font-awesome.scss';
+var Menu = require('react-burger-menu').stack;
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
-var Menu = require('react-burger-menu').push;
-
-const Navigation = (props) => {
-  // const { style } = props;
-  /*return (
-    <div className="navbar">
-      <div className="navbar-left">
-        <ul>
-          <li><a href="#">What We Do</a></li>
-          <li className="contrast"><a href="#">Our Process</a></li>
-        </ul>
-      </div>
-      <div className="navbar-center">
-      </div>
-      <div className="navbar-right">
-        <ul>
-          <li><a href={ prefixLink('about/') }>About Us</a></li>
-          <li className="contrast"><a href="#">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  );*/
-  return (
-      <Menu right>
-        <a id="home" className="menu-item" href="/">Home</a>
-        <a id="about" className="menu-item" href="/about">About</a>
-        <a id="contact" className="menu-item" href="/contact">Contact</a>
-      </Menu>
-  )
+export default class Navigation extends React.Component {
+  constructor(){
+    super();
+    this.state={
+      mounted: false
+    }
+  }
+  componentDidMount(){
+    this.setState({mounted: true})
+  }
+  render(){
+    return(
+      <ReactCSSTransitionGroup 
+        transitionName="navigation" 
+        transitionAppear={true} 
+        transitionAppearTimeout={1000}
+        transitionEnterTimeout={1000}
+        transitionLeaveTimeout={1000}
+      >
+        <div className="novvum-nav" key="one">
+          <div 
+            id="myMenu"
+            className="nav-container"
+          >
+              <div 
+                data-menuanchor="home" 
+                className="nav-item active"
+              >
+                <a 
+                  href="#home"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center"
+                  }}
+                >
+                  <div className="nav-item-content">
+                    <span className="fa fa-home fa-2x"/>
+                  </div>
+                </a>
+              </div>
+              <div 
+                data-menuanchor="work" 
+                className="nav-item" 
+              >
+                <a href="#work">
+                  <div className="nav-item-content">
+                    <span className="fa fa-briefcase fa-2x"/>
+                    Work
+                  </div>
+                </a>
+              </div>
+              <div 
+                data-menuanchor="process" 
+                className="nav-item"
+              >
+                <a href="#process">
+                  <div className="nav-item-content">
+                    <span className="fa fa-cogs fa-2x"/>
+                    Process
+                  </div>
+                </a>
+              </div>
+              <div 
+                data-menuanchor="about" 
+                className="nav-item"
+              >
+                <a href="#about">
+                  <div className="nav-item-content">
+                    <span className="fa fa-question fa-2x"/>
+                    About
+                  </div>
+                </a>
+              </div>
+              <div 
+                data-menuanchor="contact" 
+                className="nav-item"
+              >
+                <a href="#contact">
+                  <div className="nav-item-content">
+                    <span className="fa fa-phone fa-2x"/>
+                    Contact
+                  </div>
+                </a>
+              </div>
+          </div>
+        </div>
+      </ReactCSSTransitionGroup>
+    )
+  }
 };
-
-Navigation.propTypes = {
-  style: React.PropTypes.object,
-};
-
-export default Navigation;

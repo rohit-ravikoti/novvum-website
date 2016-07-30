@@ -7,6 +7,7 @@ import { config } from 'config';
 import { Container } from 'react-responsive-grid';
 import ga from 'react-google-analytics';
 import { trim, capitalize } from 'lodash';
+import Navigation from 'components/Navigation';
 
 import 'css/base.scss';
 
@@ -94,10 +95,12 @@ const Template = (props) => {
 
 
   return (
-      <div>
+      <div id="outer-container">
         {helmet}
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        {children}
+        <Navigation />
+        <div id="page-wrap">
+          {children}
+        </div>
         <GaInitializer />
       </div>);
 };

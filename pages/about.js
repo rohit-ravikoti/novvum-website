@@ -11,13 +11,12 @@ export default class About extends React.Component {
     require('fullpage.js/jquery.fullpage.js');
     $('#fullpage').fullpage({
         sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
-        anchors: ['header', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
-        menu: '#menu',
+        anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
+        menu: "#myMenu",
         css3: true,
         scrollingSpeed: 1000,
         controlArrows: false,
-        verticalCentered: false,
-        scrollBar:true
+        verticalCentered: false
     });
   }
   render(){

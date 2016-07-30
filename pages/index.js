@@ -1,54 +1,38 @@
 import React from 'react';
 // import { rhythm } from 'utils/typography';
 import { config } from 'config';
-import Navigation from 'components/Navigation';
-import 'css/landing.scss';
+import Home from 'components/Home';
+var $ = require('jquery');
 
-const SiteIndex = () => (
-    <div className="landing">
-        <Navigation />
-        <div style={{
-            position: "absolute",
-            backgroundColor: "white",
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            zIndex: 0
-          }}
-        ></div>
-        <iframe
-          src="https://s.codepen.io/rravikot/debug/OXQxzg"
-          style={{
-            position: 'absolute', 
-            border: '0px #FFFFFF none',
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            zIndex: 3
-          }}
-          name="myiFrame"
-          scrolling="no"
-          frameBorder="0"
-          marginHeight="0px"
-          marginWidth="0px"
-          height="100%"
-          width="100%"
-        />
-        <div className="content-wrapper">
-          <div className="content-container">
-            <div className="content-title">{config.authorName}</div>
-            <div className="content-subtitle">
-              “All innovation begins with vision. It’s what happens next that is critical.”
-              <br/>
-              - Eric Ries
-            </div>
-          </div>
+class SiteIndex extends React.Component {
+  constructor() {
+    super()
+  }
+  componentDidMount() {
+    require('fullpage.js/jquery.fullpage.js');
+    $('#fullpage').fullpage({
+        sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+        anchors: ['home', 'work', 'process', 'about', 'contact'],
+        menu: "#myMenu",
+        css3: true,
+        scrollingSpeed: 1000,
+        controlArrows: false,
+        verticalCentered: false
+    });
+  }
+  render(){
+    return (
+      <div id='fullpage'>
+        <div className="section active" id="section0">
+            <Home />
         </div>
-    </div>
-  );
-
+        <div className="section" id="section1">
+          blah
+        </div>
+      </div>
+    );
+  }
+}
 SiteIndex.propTypes = {
   route: React.PropTypes.object,
 };

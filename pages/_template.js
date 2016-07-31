@@ -93,12 +93,12 @@ const Template = (props) => {
     ]}
   />);
   return (
-      <div id="outer-container">
+      <div className="outer-container" id="outer-container">
         {helmet}
-        <Navigation location={props.location}/>
-        <div id="page-wrap">
+        <div className="page-wrap" id="page-wrap">
           {children}
         </div>
+        <Navigation location={props.location}/>
         <GaInitializer />
       </div>);
 };

@@ -21,3 +21,19 @@ a {
 .scrollable {
 	overflow-y: scroll;
 }
+
+.outer-container {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.page-wrap {
+  position: relative;
+  flex: 1;
+}

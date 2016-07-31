@@ -22,7 +22,7 @@ export default class Navigation extends React.Component {
         pathname: '/',
         content: (
           <div className="nav-item-content">
-            <span className="fa fa-home fa-2x"/>
+            <span className="fa fa-home"/>
           </div>
         ),
         inactiveContent: (
@@ -40,8 +40,13 @@ export default class Navigation extends React.Component {
         pathname: '/work/',
         content: (
           <div className="nav-item-content">
-            <span className="fa fa-briefcase fa-2x"/>
+            <span className="fa fa-briefcase"/>
             Work
+          </div>
+        ),
+        inactiveContent: (
+          <div className="nav-item-inactive-content">
+            <span className="fa fa-briefcase"/>
           </div>
         )
       },
@@ -49,8 +54,13 @@ export default class Navigation extends React.Component {
         pathname: '/process/',
         content: (
           <div className="nav-item-content">
-            <span className="fa fa-cogs fa-2x"/>
+            <span className="fa fa-cogs"/>
             Process
+          </div>
+        ),
+        inactiveContent: (
+          <div className="nav-item-inactive-content">
+            <span className="fa fa-cogs"/>
           </div>
         )
       },
@@ -58,8 +68,13 @@ export default class Navigation extends React.Component {
         pathname: '/about/',
         content: (
           <div className="nav-item-content">
-            <span className="fa fa-question fa-2x"/>
+            <span className="fa fa-question"/>
             About
+          </div>
+        ),
+        inactiveContent: (
+          <div className="nav-item-inactive-content">
+            <span className="fa fa-question"/>
           </div>
         )
       },
@@ -67,8 +82,13 @@ export default class Navigation extends React.Component {
         pathname: '/contact/',
         content: (
           <div className="nav-item-content">
-            <span className="fa fa-phone fa-2x"/>
+            <span className="fa fa-phone"/>
             Contact
+          </div>
+        ),
+        inactiveContent: (
+          <div className="nav-item-inactive-content">
+            <span className="fa fa-phone"/>
           </div>
         )
       }
@@ -81,28 +101,30 @@ export default class Navigation extends React.Component {
         transitionEnterTimeout={1000}
         transitionLeaveTimeout={1000}
       >
-        <div className="novvum-nav" key="one">
-          <div 
-            className="nav-container"
-          >
-            {
-              items.map((item) => {
-                return (
-                  <div 
-                    key={item.pathname}
-                    className={`nav-item${item.pathname === this.props.location.pathname ? " active" : ""}`}
-                  >
-                    <a 
-                      href={item.pathname}
-                      style={item.style}
+        <div className="nav-wrap" key="one">
+          <div className="novvum-nav">
+            <div 
+              className="nav-container"
+            >
+              {
+                items.map((item) => {
+                  return (
+                    <div 
+                      key={item.pathname}
+                      className={`nav-item${item.pathname === this.props.location.pathname ? " active" : ""}`}
                     >
-                      {item.content}
-                      {item.inactiveContent}
-                    </a>
-                  </div>
-                )
-              })
-            }
+                      <a 
+                        href={item.pathname}
+                        style={item.style}
+                      >
+                        {item.content}
+                        {item.inactiveContent}
+                      </a>
+                    </div>
+                  )
+                })
+              }
+            </div>
           </div>
         </div>
       </ReactCSSTransitionGroup>

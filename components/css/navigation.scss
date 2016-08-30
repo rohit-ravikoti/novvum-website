@@ -1,18 +1,26 @@
 $animation-time: 0.4s;
+$nav-width: 7em;
+$nav-width-collapsed: $nav-width * 0.3;
+.nav-wrap {
+  position: relative;
+  width: $nav-width-collapsed;
+  height: 100vh;
+}
 .navigation-appear {
+  width: 0px;
   display: inline-block;
   right: -500px !important;
 }
 .navigation-enter-appear {
+  width: $nav-width;
   right: 0px !important;
 }
 .novvum-nav {
   position: fixed;
-  transform: translateY(-50%);
   right: 0;
-  top: 50%;
-  width: 160px;
-  height: 35vh;
+  top: 0;
+  width: $nav-width;
+  height: 100vh;
   z-index: 2000;
   transition: all $animation-time ease;
   transition-delay: 2s;
@@ -25,23 +33,23 @@ $animation-time: 0.4s;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: stretch;
     align-items: flex-end;
+    align-content: stretch;
     transition: all $animation-time ease;
     transition-delay: 0s;
     .nav-item {
+      flex: 1;
       transition: all $animation-time ease;
       transition-delay: 0s;
       background: #ecf0f1;
       padding: 10px;
-      width: 30%;
+      width: $nav-width-collapsed;
       position: relaitve;
-      /* -webkit-box-shadow: 1px 3px 20px 1px #34495e;
-      -moz-box-shadow:    1px 3px 20px 1px #34495e;
-      box-shadow:         1px 3px 20px 1px #34495e; */
       a {
         color: white;
         width: 100%;
+        height: 100%;
       }
       img{
         margin: 0;
@@ -49,24 +57,28 @@ $animation-time: 0.4s;
         width: 50px;
         height: auto;
       }
-      &-content{
+      &-content {
         display: none;
-        justify-content: space-between;
+        padding: 75% 0;
+        flex-direction: column;
+        justify-content: space-around;
         align-items: center;
-        align-content: center;
+        align-content: space-around;
         white-space: nowrap;
         height: 100%;
       }
       &-inactive-content{
         display: flex;
         color: black;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         align-content: center;
         white-space: nowrap;
+        width: 100%;
+        height: 100%;
       }
       &:hover{
-        width: 90%;
+        width: 70%;
         background: #6C7A89;
         padding: 10px 20px;
         .nav-item-content{
@@ -80,15 +92,8 @@ $animation-time: 0.4s;
     .active{
       background: #FF8D56/* #3498db */;
       padding: 10px 20px;
-      width: 100%;
-      .nav-item-content{
-          display: flex;
-      }
       .nav-item-inactive-content{
-        display: none;
-      }
-      &:hover{
-        width: 100%;
+        color: white;
       }
     }
   }
